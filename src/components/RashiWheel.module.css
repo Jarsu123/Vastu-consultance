@@ -1,0 +1,50 @@
+.wheelContainer {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(45%, -50%);
+  width: 900px;
+  height: 900px;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes rotate-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.rotatingWheel {
+  width: 100%;
+  height: 100%;
+  opacity: 0.85;
+  animation: rotate-slow 150s linear infinite;
+  transform-origin: 50% 50%;
+  filter: drop-shadow(0 0 15px rgba(234, 179, 8, 0.15));
+}
+
+/* Om in center does NOT rotate */
+.omContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+@media (max-width: 1024px) {
+  .wheelContainer {
+    width: 550px;
+    height: 550px;
+  }
+}
+
+@media (max-width: 640px) {
+  .wheelContainer {
+    width: 400px;
+    height: 400px;
+  }
+}
