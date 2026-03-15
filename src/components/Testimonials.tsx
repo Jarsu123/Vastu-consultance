@@ -1,3 +1,4 @@
+import { MoonPhases } from "./CelestialDecor";
 import styles from "./Testimonials.module.css";
 
 const testimonials = [
@@ -26,7 +27,8 @@ export default function Testimonials() {
     <section id="testimonials" className={styles.testimonials}>
       <div className="container">
         <div className={styles.header}>
-          <div className={styles.badge}>
+          <MoonPhases />
+          <div className={styles.badge} style={{ marginTop: '2rem' }}>
             <div className={styles.line}></div>
             <span className={styles.badgeText}>Client Voices</span>
           </div>

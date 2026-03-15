@@ -282,6 +282,10 @@ export default function RashiWheel() {
                 style={{ cursor: "pointer", pointerEvents: "all", transition: "stroke-width 0.2s" }}
                 onMouseEnter={() => setHoveredSign(i)}
                 onMouseLeave={() => setHoveredSign(null)}
+                onClick={() => {
+                  // The global click effect will handle the visual part
+                  console.log(`Aligned with ${ZODIAC_NAMES[i]}`);
+                }}
               />
             </g>
           ))}

@@ -1,9 +1,11 @@
 import Image from "next/image";
+import { SolarSpirit } from "./CelestialDecor";
 import styles from "./About.module.css";
 
 export default function About() {
   return (
     <section id="about" className={styles.about}>
+      <SolarSpirit />
       <div className="container">
         <div className={styles.grid}>
           <div className={styles.imageSide}>
