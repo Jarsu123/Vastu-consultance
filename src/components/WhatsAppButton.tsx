@@ -4,7 +4,7 @@ import styles from "./WhatsAppButton.module.css";
 
 export default function WhatsAppButton() {
   const handleClick = () => {
-    window.open("https://wa.me/919876543210", "_blank");
+    window.open("https://wa.me/919582252374", "_blank");
   };
 
   return (

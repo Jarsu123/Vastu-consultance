@@ -1,10 +1,14 @@
 import Image from "next/image";
 import { AstrologySymbol } from "./CelestialDecor";
+import RashiWheel from "./RashiWheel";
 import styles from "./BuyBook.module.css";
 
 export default function BuyBook() {
   return (
     <section id="book" className={styles.buyBook}>
+      <div className={styles.wheelWrapper}>
+        <RashiWheel />
+      </div>
       <div className="container" style={{ position: 'relative' }}>
         <div style={{ position: 'absolute', top: '-40px', right: '40px', zIndex: 5 }}>
           <AstrologySymbol type="lotus" />

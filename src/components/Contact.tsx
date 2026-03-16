@@ -1,8 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { AstrologySymbol } from "./CelestialDecor";
 import VastuMandala from "./VastuMandala";
+import TipBox from "./TipBox";
 import styles from "./Contact.module.css";
 
 const fadeInUp = {
@@ -18,6 +20,27 @@ const staggerContainer = {
 };
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    service: "Vaastu Correction",
+    message: ""
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const { name, email, phone, service, message } = formData;
+    const whatsAppMessage = `Hello, I'm ${name}.\nPhone: ${phone}\nEmail: ${email}\nService: ${service}\nMessage: ${message}`;
+    const encodedMessage = encodeURIComponent(whatsAppMessage);
+    window.open(`https://wa.me/919582252374?text=${encodedMessage}`, "_blank");
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
   return (
     <section id="contact" className={styles.contact}>
       {/* Background World */}
@@ -38,7 +61,7 @@ export default function Contact() {
         >
           <motion.div className={styles.badge} variants={fadeInUp}>
             <div className={styles.dot}></div>
-            <span className={styles.badgeText}>Final Alignment</span>
+            <span className={styles.badgeText}>Direct Connection</span>
           </motion.div>
           
           <motion.h2 className={styles.title} variants={fadeInUp}>
@@ -47,7 +70,7 @@ export default function Contact() {
           </motion.h2>
           
           <motion.p className={styles.subtitle} variants={fadeInUp}>
-            Step into the sanctuary of balanced architecture. Our consultants are ready to harmonize your spatial reality.
+            Step into the sanctuary of balanced architecture. Our consultants are ready to harmonize your spatial reality via WhatsApp.
           </motion.p>
         </motion.div>
 
@@ -60,35 +83,69 @@ export default function Contact() {
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
           >
             <div className={styles.glassCard}>
-              <form className={styles.form}>
+              <form className={styles.form} onSubmit={handleSubmit}>
                 <div className={styles.row}>
                   <div className={styles.formGroup}>
-                    <label>INITIATE AS</label>
-                    <input type="text" placeholder="Full Name" />
+                    <label>NAME *</label>
+                    <input 
+                      type="text" 
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      placeholder="Full Name" 
+                      required
+                    />
                   </div>
                   <div className={styles.formGroup}>
-                    <label>REACHABLE AT</label>
-                    <input type="email" placeholder="Email Address" />
+                    <label>PHONE *</label>
+                    <input 
+                      type="tel" 
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      placeholder="Phone Number" 
+                      required
+                    />
                   </div>
+                </div>
+
+                <div className={styles.formGroup}>
+                  <label>EMAIL ADDRESS</label>
+                  <input 
+                    type="email" 
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="Email Address" 
+                  />
                 </div>
                 
                 <div className={styles.formGroup}>
-                  <label>SERVICE PATH</label>
-                  <select>
-                    <option>Vastu Architecture</option>
-                    <option>Astro-Mapping</option>
-                    <option>Energy Balancing</option>
-                    <option>Corporate Vastu</option>
+                  <label>SERVICE PATH *</label>
+                  <select name="service" value={formData.service} onChange={handleChange} required>
+                    <option value="">Select a Service</option>
+                    <option>Vedic Numerology</option>
+                    <option>Name Correction</option>
+                    <option>Watch Analysis</option>
+                    <option>Business Numerology</option>
+                    <option>Vaastu Correction</option>
+                    <option>Astrology</option>
                   </select>
                 </div>
                 
                 <div className={styles.formGroup}>
-                  <label>YOUR INTENTION</label>
-                  <textarea rows={3} placeholder="Tell us about your space and goals..."></textarea>
+                  <label>MESSAGE</label>
+                  <textarea 
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    rows={3} 
+                    placeholder="Tell us about your space and goals (Optional)..."
+                  ></textarea>
                 </div>
                 
                 <button type="submit" className={styles.submitBtn}>
-                  <span className={styles.btnText}>INVOKE CONSULTATION</span>
+                  <span className={styles.btnText}>SUBMIT</span>
                   <div className={styles.btnIcon}>
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                       <line x1="7" y1="17" x2="17" y2="7"></line>
@@ -119,13 +176,13 @@ export default function Contact() {
               <span className={styles.blockNum}>02</span>
               <div className={styles.blockContent}>
                 <h4>Direct Link</h4>
-                <p>+91 98765 43210<br />hello@vastu.spirit</p>
+                <p>+91 9582252374<br />hello@vastu.spirit</p>
               </div>
             </motion.div>
 
             <motion.div className={styles.socialGrid} variants={fadeInUp}>
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                 <span>INSTAGRAM</span>
               </a>
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
@@ -136,6 +193,17 @@ export default function Contact() {
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="7.3" cy="8.1" r="3.1"></circle><path d="M7 13.5v3.1c0 .4-.4.8-.8.8H2.8c-.4 0-.8-.4-.8-.8v-3.1"></path><path d="M2 13.5h10.6"></path><path d="M13.5 12h7"></path><path d="M17 12V4"></path></svg>
                 <span>BEHANCE</span>
               </a>
+            </motion.div>
+
+            {/* Floating Antigravity Tip Box */}
+            <motion.div 
+              style={{ marginTop: '5rem', display: 'flex', justifyContent: 'flex-start' }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.6, duration: 1 }}
+            >
+              <TipBox />
             </motion.div>
           </motion.div>
         </div>

@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
+import QuoteBanner from "@/components/QuoteBanner";
 import About from "@/components/About";
 import Testimonials from "@/components/Testimonials";
 import BuyBook from "@/components/BuyBook";
@@ -19,11 +20,12 @@ export default function Home() {
       <Testimonials />
       <BuyBook />
       <Contact />
+      <QuoteBanner />
       <WhatsAppButton />
       
-      <footer style={{ padding: '4rem 0', textAlign: 'center', backgroundColor: 'var(--background)', borderTop: '1px solid #eee' }}>
-        <p className="brand-font" style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Healing<span className="text-accent">.</span></p>
-        <p style={{ fontSize: '0.875rem', color: 'var(--text-light)' }}>© 2026 Healing Consultancy. All rights reserved.</p>
+      <footer style={{ padding: '4rem 0', textAlign: 'center', backgroundColor: 'var(--background)' }}>
+        <p className="brand-font" style={{ fontSize: '1.5rem', marginBottom: '0.5rem', fontWeight: 600 }}>Healing<span className="text-accent">.</span></p>
+        <p style={{ fontSize: '0.75rem', color: 'var(--text-light)', letterSpacing: '0.05em' }}>© 2026 Healing Consultancy. All rights reserved.</p>
       </footer>
     </>
   );

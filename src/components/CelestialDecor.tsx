@@ -79,8 +79,8 @@ export const SolarSpirit = () => {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, [mouseX, mouseY]);
 
-  const sunX = useSpring(useTransform(mouseX, [0, window.innerWidth], [-20, 20]));
-  const sunY = useSpring(useTransform(mouseY, [0, window.innerHeight], [-20, 20]));
+  const sunX = useSpring(useTransform(mouseX, [0, typeof window !== 'undefined' ? window.innerWidth : 1000], [-20, 20]));
+  const sunY = useSpring(useTransform(mouseY, [0, typeof window !== 'undefined' ? window.innerHeight : 1000], [-20, 20]));
 
   return (
     <div className={styles.solarWrapper}>

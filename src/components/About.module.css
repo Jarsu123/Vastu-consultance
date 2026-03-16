@@ -1,5 +1,5 @@
 .about {
-  padding: 8rem 0;
+  padding: 12rem 0 8rem;
   background-color: white;
   overflow: hidden;
 }
@@ -29,10 +29,12 @@
   z-index: 2;
   border-radius: 0.5rem;
   overflow: hidden;
+  box-shadow: 0 40px 100px -20px rgba(0,0,0,0.15);
 }
 
 .image {
   transition: transform 0.8s ease;
+  object-position: center top; /* Ensure the face is well framed */
 }
 
 .imageWrapper:hover .image {
@@ -41,19 +43,19 @@
 
 .imageBg {
   position: absolute;
-  top: 3rem;
-  left: -3rem;
+  top: 2rem; /* Reduced from 3rem */
+  left: -2rem; /* Reduced from 3rem */
   width: 100%;
   height: 100%;
   border: 1px solid var(--accent-orange);
   z-index: 1;
-  opacity: 0.2;
+  opacity: 0.3; /* Slightly more visible */
 }
 
 .experienceBadge {
   position: absolute;
-  bottom: 2rem;
-  right: -2rem;
+  bottom: 0; /* Aligned to bottom edges */
+  right: 0;  /* Aligned to right edges */
   background-color: var(--accent-orange);
   color: white;
   padding: 1.5rem 2rem;

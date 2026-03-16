@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { SolarSpirit } from "./CelestialDecor";
 import styles from "./About.module.css";
 
@@ -11,7 +12,7 @@ export default function About() {
           <div className={styles.imageSide}>
             <div className={styles.imageWrapper}>
               <Image 
-                src="/images/about-expert.png" 
+                src="/images/about-expert.jpg" 
                 alt="Vastu Expert" 
                 fill
                 style={{ objectFit: 'cover' }}
@@ -55,7 +56,7 @@ export default function About() {
               </div>
             </div>
 
-            <button className={styles.cta}>Read Our Story</button>
+            <Link href="/about" className={styles.cta}>Read Our Story</Link>
           </div>
         </div>
       </div>

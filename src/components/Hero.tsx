@@ -20,14 +20,14 @@ export default function Hero() {
           </h1>
 
           <p className={styles.description}>
-            Harnessing celestial movements and spatial harmonics to guide your path toward eternal balance and prosperity.
+            Guiding you towards balance, positivity, and prosperity through Vastu wisdom
           </p>
 
           <div className={styles.actions}>
-            <Link href="#" className={styles.primaryBtn}>
+            <Link href="#contact" className={styles.primaryBtn}>
               Get Started
             </Link>
-            <Link href="#" className={styles.secondaryBtn}>
+            <Link href="#services" className={styles.secondaryBtn}>
               <span>Explore Vastu</span>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12"></line>
