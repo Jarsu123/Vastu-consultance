@@ -1,11 +1,15 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
 import { SriYantra } from "./CelestialDecor";
 import styles from "./Services.module.css";
 
 const services = [
   {
     title: "Vedic Numerology",
-    description: "Aligning your life path with the power of sacred numbers and cosmic vibrations.",
+    description: "Learn how your numbers can help you get more success in life.",
     image: "/images/service-numerology.png",
     icon: (
       <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -16,7 +20,7 @@ const services = [
   },
   {
     title: "Name Correction",
-    description: "Harmonizing your identity's frequency to attract success and eliminate obstacles.",
+    description: "Fix the spelling of your name for better luck and success.",
     image: "/images/service-name.png",
     icon: (
       <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -26,7 +30,7 @@ const services = [
   },
   {
     title: "Watch Analysis",
-    description: "Decoding the energy of your timepiece to synchronize with auspicious moments.",
+    description: "Check if your watch brings lucky times for you.",
     image: "/images/service-watch.png",
     icon: (
       <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -38,7 +42,7 @@ const services = [
   },
   {
     title: "Business Numerology",
-    description: "Selecting powerful brand names and dates to ensure commercial prosperity.",
+    description: "Pick the right business name and dates to earn more money.",
     image: "/images/service-business.png",
     icon: (
       <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -49,7 +53,7 @@ const services = [
   },
   {
     title: "Vaastu Correction",
-    description: "Realigning environmental energies without structural demolition for total harmony.",
+    description: "Fix your home's energy without breaking any walls.",
     image: "/images/service-correction.png",
     icon: (
       <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -60,7 +64,7 @@ const services = [
   },
   {
     title: "Astrology",
-    description: "Gaining profound insights from celestial alignments to navigate your destiny.",
+    description: "Get advice from the stars to plan your future.",
     image: "/images/service-astrology.png",
     icon: (
       <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -73,6 +77,35 @@ const services = [
 ];
 
 export default function Services() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+
+  // Auto-slide effect
+  useEffect(() => {
+    let interval: NodeJS.Timeout;
+    if (isAutoPlaying) {
+      interval = setInterval(() => {
+        setActiveIndex((prev) => (prev + 1) % services.length);
+      }, 6000); // 6 seconds per slide for better readability
+    }
+    return () => clearInterval(interval);
+  }, [isAutoPlaying]);
+
+  const nextSlide = () => {
+    setActiveIndex((prev) => (prev + 1) % services.length);
+    setIsAutoPlaying(false);
+  };
+
+  const prevSlide = () => {
+    setActiveIndex((prev) => (prev - 1 + services.length) % services.length);
+    setIsAutoPlaying(false);
+  };
+
+  const handleCardClick = (index: number) => {
+    setActiveIndex(index);
+    setIsAutoPlaying(false);
+  };
+
   return (
     <section id="services" className={styles.services}>
       <SriYantra />
@@ -90,27 +123,133 @@ export default function Services() {
           </p>
         </div>
 
-        <div className={styles.grid}>
-          {services.map((service, index) => (
-            <div key={index} className={styles.card}>
-              <div className={styles.imageOverlay}>
-                <Image 
-                  src={service.image} 
-                  alt={service.title} 
-                  fill 
-                  style={{ objectFit: 'cover' }}
-                  className={styles.cardImage}
-                />
-                <div className={styles.gradient}></div>
-              </div>
-              <div className={styles.cardContent}>
-                <div className={styles.iconWrapper}>{service.icon}</div>
-                <h3 className={styles.cardTitle}>{service.title}</h3>
-                <p className={styles.cardDescription}>{service.description}</p>
-              </div>
-              <div className={styles.hoverLine}></div>
+        <div className={styles.carouselContainer} onMouseEnter={() => setIsAutoPlaying(false)} onMouseLeave={() => setIsAutoPlaying(true)}>
+          <div className={styles.carouselWrapper}>
+            <AnimatePresence mode="popLayout">
+              {services.map((service, index) => {
+                // Calculate relative position (-2 to 2)
+                let position = index - activeIndex;
+                if (position > 2) position -= services.length;
+                if (position < -2) position += services.length;
+
+                // Only render the 5 visible cards
+                if (Math.abs(position) > 2) return null;
+
+                let zIndex = 1;
+                let x = "0%";
+                let scale = 0.6;
+                let rotateY = 0;
+                let opacity = 0;
+                let blur = "8px";
+                const isActive = position === 0;
+
+                if (isActive) {
+                  // Center card (Focus)
+                  zIndex = 20;
+                  scale = 1;
+                  opacity = 1;
+                  x = "0%";
+                  blur = "0px";
+                } else if (position === 1) {
+                  // Inner Right
+                  zIndex = 10;
+                  scale = 0.85;
+                  opacity = 0.4;
+                  x = "45%";
+                  rotateY = -15;
+                  blur = "3px";
+                } else if (position === -1) {
+                  // Inner Left
+                  zIndex = 10;
+                  scale = 0.85;
+                  opacity = 0.4;
+                  x = "-45%";
+                  rotateY = 15;
+                  blur = "3px";
+                } else if (position === 2) {
+                  // Outer Right
+                  zIndex = 5;
+                  scale = 0.7;
+                  opacity = 0.15;
+                  x = "80%";
+                  rotateY = -25;
+                  blur = "6px";
+                } else if (position === -2) {
+                  // Outer Left
+                  zIndex = 5;
+                  scale = 0.7;
+                  opacity = 0.15;
+                  x = "-80%";
+                  rotateY = 25;
+                  blur = "6px";
+                }
+
+                return (
+                  <motion.div
+                    key={index}
+                    className={styles.card}
+                    initial={{ opacity: 0, scale: 0.5, x: position > 0 ? "100%" : "-100%" }}
+                    animate={{ 
+                      opacity, 
+                      scale, 
+                      x, 
+                      zIndex,
+                      rotateY,
+                      filter: `blur(${blur})`
+                    }}
+                    transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                    style={{ 
+                      position: "absolute", 
+                      left: "50%", 
+                      marginLeft: "-210px", // Half of new width (420/2)
+                      pointerEvents: isActive ? "auto" : "none"
+                    }}
+                    onClick={() => handleCardClick(index)}
+                  >
+                    <div className={styles.imageOverlay}>
+                      <Image 
+                        src={service.image} 
+                        alt={service.title} 
+                        fill 
+                        style={{ objectFit: 'cover' }}
+                        className={styles.cardImage}
+                      />
+                      <div className={styles.gradient}></div>
+                    </div>
+                    <motion.div 
+                      className={styles.cardContent}
+                      animate={{ opacity: isActive ? 1 : 0 }}
+                      transition={{ duration: 0.4 }}
+                    >
+                      <div className={styles.iconWrapper}>{service.icon}</div>
+                      <h3 className={styles.cardTitle}>{service.title}</h3>
+                      <p className={styles.cardDescription}>{service.description}</p>
+                    </motion.div>
+                    <div className={styles.hoverLine}></div>
+                  </motion.div>
+                );
+              })}
+            </AnimatePresence>
+          </div>
+
+          {/* Navigation Controls */}
+          <div className={styles.controls}>
+            <button className={styles.navBtn} onClick={prevSlide} aria-label="Previous service">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            </button>
+            <div className={styles.dots}>
+              {services.map((_, i) => (
+                <div 
+                  key={i} 
+                  className={`${styles.dot} ${i === activeIndex ? styles.activeDot : ""}`}
+                  onClick={() => handleCardClick(i)}
+                ></div>
+              ))}
             </div>
-          ))}
+            <button className={styles.navBtn} onClick={nextSlide} aria-label="Next service">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </button>
+          </div>
         </div>
       </div>
     </section>

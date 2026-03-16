@@ -31,7 +31,7 @@ export default function BuyBook() {
           <div className={styles.content}>
             <div className={styles.badge}>
               <div className={styles.line}></div>
-              <span className={styles.badgeText}>Masterclass in Print</span>
+              <span className={styles.badgeText}>Number Magic Book</span>
             </div>
             <h2 className={styles.title}>
               Number's <span className={styles.italic}>Magic</span>
@@ -39,31 +39,29 @@ export default function BuyBook() {
             <p className={styles.subtitle}>By Numerologist Shalu Singh</p>
             
             <div className={styles.summaryBox}>
-              <h3 className={styles.summaryTitle}>Brief Summary</h3>
+              <h3 className={styles.summaryTitle}>About the Book</h3>
               <p className={styles.description}>
-                "Number's Magic" is a profound exploration into the world of Numerology, where ancient wisdom meets modern practical application. This book reveals how numerical vibrations influence every aspect of our lives—from our names and birth dates to our business success and spatial harmony. 
+                "Number's Magic" explains how numbers help you. It shows how dates and names affect your success, money, and peace at home.
                 <br /><br />
-                Shalu Singh expertly guides readers through the intricate relationship between numbers and energy, providing actionable remedies and insights that can transform one's destiny. The book dives deep into the psychology of digits, explaining how each number carries a unique frequency that resonates with the universe. 
+                Shalu Singh shows you how to use numbers to change your life for the better.
                 <br /><br />
                 <strong>What's Inside:</strong>
                 <br />
-                • <b>Predictive Numerology:</b> Master the art of forecasting trends and identifying favorable periods for big life decisions.
+                • <b>Future Planning:</b> Learn how to plan your big moves using numbers.
                 <br />
-                • <b>Name Correction:</b> Learn the science of balancing your name's vibration to sync with your birth path for maximum success.
+                • <b>Better Luck:</b> Fix your name's spelling to get more success.
                 <br />
-                • <b>Spatial Synergy:</b> Discover how to optimize your living or work environment using the combined power of Vastu and Numerology.
+                • <b>Home Harmony:</b> Use Vastu and numbers together for a happy house.
                 <br />
-                • <b>Relationship Harmony:</b> Build deeper connections by understanding the numerical compatibility between partners, friends, and colleagues.
-                <br /><br />
-                Whether you are a newcomer seeking personal clarity or a professional seeking to enhance your consultancy, this masterclass is a definitive guide to attracting prosperity, peace, and purpose into your life through the hidden magic of numbers.
+                • <b>Good Relationships:</b> Understand people better with their numbers.
               </p>
             </div>
 
             <ul className={styles.features}>
-              <li>Master the art of Predictive Numerology</li>
-              <li>Learn Name and Business Correction techniques</li>
-              <li>Understand Relationship Compatibility through numbers</li>
-              <li>Discover the synergy between Vastu and Numerology</li>
+              <li>Learn how numbers plan your future</li>
+              <li>Fix your name for better luck</li>
+              <li>Make your relationships better</li>
+              <li>Vastu tips for a happy home</li>
             </ul>
 
             <div className={styles.actions}>

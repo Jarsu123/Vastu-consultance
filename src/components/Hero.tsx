@@ -11,7 +11,7 @@ export default function Hero() {
         <div className={styles.content}>
           <div className={styles.badge}>
             <div className={styles.line}></div>
-            <span className={styles.badgeText}>The Science of Soul & Space</span>
+            <span className={styles.badgeText}>Simple Vastu for Happy Homes</span>
           </div>
 
           <h1 className={styles.title}>
@@ -20,7 +20,7 @@ export default function Hero() {
           </h1>
 
           <p className={styles.description}>
-            Guiding you towards balance, positivity, and prosperity through Vastu wisdom
+            Helping you bring peace, happiness, and money to your home with Vastu.
           </p>
 
           <div className={styles.actions}>
@@ -28,7 +28,7 @@ export default function Hero() {
               Get Started
             </Link>
             <Link href="#services" className={styles.secondaryBtn}>
-              <span>Explore Vastu</span>
+              <span>See Services</span>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12"></line>
                 <polyline points="12 5 19 12 12 19"></polyline>

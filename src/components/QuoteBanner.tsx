@@ -34,14 +34,14 @@ export default function QuoteBanner() {
             <div className={styles.quoteWrapper}>
               <span className={styles.quoteMark}>“</span>
               <blockquote className={styles.quote}>
-                True harmony begins when your space, energy, and intentions align.
+                A peaceful home and good energy bring happiness to your life.
               </blockquote>
             </div>
 
-            <div className={styles.ctaSubtext}>START YOUR CONSULTATION TODAY</div>
+            <div className={styles.ctaSubtext}>BOOK YOUR MEETING TODAY</div>
             
             <Link href="#contact" className={styles.consultBtn}>
-              CONSULT NOW
+              TALK TO US
             </Link>
           </div>
           

@@ -62,13 +62,13 @@ export default function Testimonials() {
           <MoonPhases />
           <div className={styles.badge} style={{ marginTop: '2rem' }}>
             <div className={styles.line}></div>
-            <span className={styles.badgeText}>Client Voices</span>
+            <span className={styles.badgeText}>Client Stories</span>
           </div>
           <h2 className={styles.title}>
-            Whispers of <span className={styles.italic}>Transformation</span>
+            What People <span className={styles.italic}>Say</span>
           </h2>
           <p className={styles.subtitle}>
-            Click anywhere below to align the cosmic energy
+            Click anywhere below to see what people feel
           </p>
         </div>
 
@@ -113,7 +113,7 @@ export default function Testimonials() {
                   </div>
                   <div className={styles.authorInfo}>
                     <h4 className={styles.name}>{t.name}</h4>
-                    <span className={styles.verified}>Verified Experience</span>
+                    <span className={styles.verified}>Real Feedback</span>
                   </div>
                 </div>
               </motion.div>

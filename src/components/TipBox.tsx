@@ -4,11 +4,11 @@ import { useState, useEffect, useRef } from "react";
 import styles from "./TipBox.module.css";
 
 const TIPS = [
-  "The North-East (Ishanya) should always be clutter-free to allow positive energy flow.",
-  "Place a small water fountain in the North to enhance career opportunities and wealth.",
-  "Avoid placing a mirror directly opposite the bed to ensure restful sleep and harmony.",
-  "The kitchen should ideally be in the South-East to balance the fire element in your home.",
-  "Keep the center area (Brahmasthan) open and light to maintain overall spatial health."
+  "Keep the North-East corner clean for good energy.",
+  "Put a small water fountain in the North for better jobs and money.",
+  "Don't put a mirror in front of your bed for better sleep.",
+  "Try to have your kitchen in the South-East corner.",
+  "Keep the center of your house empty and clean."
 ];
 
 export default function TipBox() {

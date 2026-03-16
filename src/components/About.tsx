@@ -29,34 +29,34 @@ export default function About() {
           <div className={styles.contentSide}>
             <div className={styles.badge}>
               <div className={styles.line}></div>
-              <span className={styles.badgeText}>Our Legacy</span>
+              <span className={styles.badgeText}>Our Experience</span>
             </div>
             <h2 className={styles.title}>
-              The Wisdom of <span className={styles.italic}>Centuries</span>, Crafted for Today
+              Ancient Vastu Skills for Modern Homes
             </h2>
             <p className={styles.description}>
-              At Healing Consultancy, we believe that your environment is a mirror of your inner state. For over 15 years, we have been bridging the gap between ancient Vastu Shastra and contemporary architectural needs.
+              We believe that your home affects your life. For 15 years, we have helped people make their homes better using Vastu.
             </p>
             <p className={styles.description}>
-              Our approach is not just about placing furniture or choosing colors; it's about aligning the fundamental energies of the five elements to create a resonant frequency that supports your specific life goals and spiritual growth.
+              Our way is simple—we help you fix the energy of your space to support your goals and bring peace.
             </p>
             
             <div className={styles.stats}>
               <div className={styles.statItem}>
                 <span className={styles.statNumber}>500+</span>
-                <span className={styles.statLabel}>Projects Completed</span>
+                <span className={styles.statLabel}>Success Stories</span>
               </div>
               <div className={styles.statItem}>
                 <span className={styles.statNumber}>12</span>
-                <span className={styles.statLabel}>Global Awards</span>
+                <span className={styles.statLabel}>Awards Won</span>
               </div>
               <div className={styles.statItem}>
                 <span className={styles.statNumber}>98%</span>
-                <span className={styles.statLabel}>Client Satisfaction</span>
+                <span className={styles.statLabel}>Happy Clients</span>
               </div>
             </div>
 
-            <Link href="/about" className={styles.cta}>Read Our Story</Link>
+            <Link href="/about" className={styles.cta}>Learn More</Link>
           </div>
         </div>
       </div>
