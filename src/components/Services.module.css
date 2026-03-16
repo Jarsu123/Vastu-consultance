@@ -32,10 +32,16 @@
 }
 
 .title {
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   line-height: 1.1;
   color: var(--foreground);
   margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 3.5rem;
+  }
 }
 
 .title span.italic {
@@ -68,7 +74,7 @@
 }
 
 .card {
-  height: 520px; /* Slightly taller for better image display */
+  height: 480px;
   position: relative;
   overflow: hidden;
   border: 1px solid rgba(0, 0, 0, 0.05);

@@ -102,10 +102,16 @@
 }
 
 .title {
-  font-size: 3.5rem;
+  font-size: 2.25rem;
   line-height: 1.1;
   color: var(--foreground);
   margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 3.5rem;
+  }
 }
 
 .italic {
@@ -123,8 +129,16 @@
 
 .stats {
   display: flex;
-  gap: 3rem;
+  flex-direction: column;
+  gap: 2rem;
   margin: 3rem 0;
+}
+
+@media (min-width: 640px) {
+  .stats {
+    flex-direction: row;
+    gap: 3rem;
+  }
 }
 
 .statNumber {

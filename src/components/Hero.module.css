@@ -47,6 +47,12 @@
   }
 }
 
+@media (max-width: 480px) {
+  .title {
+    font-size: 3.5rem;
+  }
+}
+
 .italic {
   font-style: italic;
   font-weight: 400; /* Playfair Display light isn't in the link, use regular italic */

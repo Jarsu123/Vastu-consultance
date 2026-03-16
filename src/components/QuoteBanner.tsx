@@ -27,23 +27,21 @@ export default function QuoteBanner() {
 
           <div className={styles.textSide}>
             <div className={styles.logoWrapper}>
-              <svg width="60" height="60" viewBox="0 0 100 100" className={styles.lotusLogo}>
-                <path d="M50 20 C60 40 90 50 50 80 C10 50 40 40 50 20" fill="var(--accent-orange)" opacity="0.8" />
-                <path d="M50 30 C70 45 80 70 50 85 C20 70 30 45 50 30" fill="var(--accent-orange)" opacity="0.6" />
-                <circle cx="50" cy="85" r="3" fill="var(--accent-orange)" />
-              </svg>
+              <div className={styles.omSymbol}>ॐ</div>
               <div className={styles.hindiText}>वास्तु देवाय: नम:</div>
             </div>
             
             <div className={styles.quoteWrapper}>
               <span className={styles.quoteMark}>“</span>
               <blockquote className={styles.quote}>
-                Our homes should inspire us to go out into the world and do great things and then welcome us back for refreshment
+                True harmony begins when your space, energy, and intentions align.
               </blockquote>
             </div>
+
+            <div className={styles.ctaSubtext}>START YOUR CONSULTATION TODAY</div>
             
             <Link href="#contact" className={styles.consultBtn}>
-              CONSULT NOW !!
+              CONSULT NOW
             </Link>
           </div>
           

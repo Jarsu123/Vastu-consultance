@@ -4,7 +4,6 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { AstrologySymbol } from "./CelestialDecor";
 import VastuMandala from "./VastuMandala";
-import TipBox from "./TipBox";
 import styles from "./Contact.module.css";
 
 const fadeInUp = {
@@ -195,16 +194,6 @@ export default function Contact() {
               </a>
             </motion.div>
 
-            {/* Floating Antigravity Tip Box */}
-            <motion.div 
-              style={{ marginTop: '5rem', display: 'flex', justifyContent: 'flex-start' }}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.6, duration: 1 }}
-            >
-              <TipBox />
-            </motion.div>
           </motion.div>
         </div>
       </div>

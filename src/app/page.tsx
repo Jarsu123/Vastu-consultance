@@ -1,7 +1,8 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import Services from "@/components/Services";
 import QuoteBanner from "@/components/QuoteBanner";
+import TipBox from "@/components/TipBox";
+import Services from "@/components/Services";
 import About from "@/components/About";
 import Testimonials from "@/components/Testimonials";
 import BuyBook from "@/components/BuyBook";
@@ -15,12 +16,13 @@ export default function Home() {
       <GridLines />
       <Navbar />
       <Hero />
+      <QuoteBanner />
+      <TipBox />
       <Services />
       <About />
       <Testimonials />
       <BuyBook />
       <Contact />
-      <QuoteBanner />
       <WhatsAppButton />
       
       <footer style={{ padding: '4rem 0', textAlign: 'center', backgroundColor: 'var(--background)' }}>

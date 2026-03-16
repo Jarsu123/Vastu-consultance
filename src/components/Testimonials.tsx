@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MoonPhases } from "./CelestialDecor";
 import styles from "./Testimonials.module.css";
@@ -46,6 +46,14 @@ const testimonials = [
 
 export default function Testimonials() {
   const [isAligned, setIsAligned] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   return (
     <section id="testimonials" className={styles.testimonials}>
@@ -69,20 +77,28 @@ export default function Testimonials() {
           onClick={() => setIsAligned(!isAligned)}
         >
           <div className={isAligned ? styles.grid : styles.scrambleContainer}>
-            {testimonials.map((t, i) => (
-              <motion.div
-                key={i}
-                initial={t.scramble}
-                animate={isAligned ? { x: 0, y: 0, rotate: 0, scale: 1, opacity: 1 } : { ...t.scramble, opacity: 1 }}
-                transition={{
-                  type: "spring",
-                  stiffness: 220,
-                  damping: 30,
-                  mass: 1,
-                  delay: isAligned ? i * 0.02 : 0
-                }}
-                className={styles.card}
-              >
+            {testimonials.map((t, i) => {
+              const mobileScramble = {
+                x: t.scramble.x * 0.4,
+                y: t.scramble.y * 0.4,
+                rotate: t.scramble.rotate * 0.5,
+                scale: t.scramble.scale
+              };
+              
+              return (
+                <motion.div
+                  key={i}
+                  initial={isMobile ? mobileScramble : t.scramble}
+                  animate={isAligned ? { x: 0, y: 0, rotate: 0, scale: 1, opacity: 1 } : (isMobile ? mobileScramble : { ...t.scramble, opacity: 1 })}
+                  transition={{
+                    type: "spring",
+                    stiffness: 220,
+                    damping: 30,
+                    mass: 1,
+                    delay: isAligned ? i * 0.02 : 0
+                  }}
+                  className={styles.card}
+                >
                 <div className={styles.stars}>
                   {[...Array(t.stars)].map((_, index) => (
                     <svg key={index} width="14" height="14" viewBox="0 0 24 24" fill="var(--accent-orange)" stroke="none">
@@ -101,7 +117,8 @@ export default function Testimonials() {
                   </div>
                 </div>
               </motion.div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>

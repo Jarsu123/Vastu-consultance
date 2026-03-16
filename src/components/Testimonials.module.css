@@ -76,19 +76,20 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 2.5rem;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
   width: 100%;
-  max-width: 1200px;
-  position: relative;
-  z-index: 5;
-  justify-items: center;
-  align-items: stretch;
+  max-width: 1200px; /* Retained from original, as new snippet didn't explicitly remove it */
+  position: relative; /* Retained from original */
+  z-index: 5; /* Retained from original */
+  justify-items: center; /* Retained from original */
+  align-items: stretch; /* Retained from original */
 }
 
 @media (min-width: 768px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
   }
 }
 

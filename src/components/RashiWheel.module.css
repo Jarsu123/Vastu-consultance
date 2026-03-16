@@ -182,8 +182,29 @@
 
 /* ── Responsive ── */
 @media (max-width: 1024px) {
-  .wheelContainer { width: 550px; height: 550px; }
+  .wheelContainer { 
+    width: 600px; 
+    height: 600px;
+    transform: translate(40%, -50%);
+  }
 }
-@media (max-width: 640px) {
-  .wheelContainer { width: 400px; height: 400px; }
+
+@media (max-width: 768px) {
+  .wheelContainer {
+    width: 500px;
+    height: 500px;
+    top: 60%; /* Move it down a bit to clear text */
+    transform: translate(30%, -50%);
+  }
+}
+
+@media (max-width: 480px) {
+  .wheelContainer {
+    width: 350px;
+    height: 350px;
+    top: 65%;
+    right: 50%;
+    transform: translate(50%, -50%); /* Centered on small mobile */
+    opacity: 0.15; /* Lower opacity since it's behind text now */
+  }
 }
