@@ -65,16 +65,15 @@ export default function Testimonials() {
         </div>
 
         <div 
-          className={styles.interactionArea} 
+          className={styles.testimonialsWrapper}
           onClick={() => setIsAligned(!isAligned)}
         >
           <div className={isAligned ? styles.grid : styles.scrambleContainer}>
             {testimonials.map((t, i) => (
               <motion.div
                 key={i}
-                layout
                 initial={t.scramble}
-                animate={isAligned ? { x: 0, y: 0, rotate: 0, scale: 1 } : t.scramble}
+                animate={isAligned ? { x: 0, y: 0, rotate: 0, scale: 1, opacity: 1 } : { ...t.scramble, opacity: 1 }}
                 transition={{
                   type: "spring",
                   stiffness: 220,
