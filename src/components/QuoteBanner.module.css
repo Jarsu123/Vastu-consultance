@@ -231,3 +231,36 @@
   border-radius: 50%;
   z-index: 1;
 }
+
+/* Mobile responsive overrides */
+@media (max-width: 768px) {
+  .glassContent {
+    padding: 2rem 1rem;
+    border-radius: 1.5rem;
+    gap: 2rem;
+  }
+  
+  .quote {
+    font-size: 1.25rem;
+  }
+
+  .quoteMark {
+    font-size: 5rem;
+    top: -1.5rem;
+    left: -0.5rem;
+  }
+
+  .portraitWrapper {
+    width: 150px;
+    height: 150px;
+    border-width: 8px;
+  }
+  
+  .consultBtn {
+    padding: 1rem 2rem;
+  }
+  
+  .omSymbol {
+    font-size: 3rem;
+  }
+}

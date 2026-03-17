@@ -153,33 +153,33 @@ export default function Services() {
                 } else if (position === 1) {
                   // Inner Right
                   zIndex = 10;
-                  scale = 0.85;
+                  scale = 0.8;
                   opacity = 0.4;
-                  x = "45%";
+                  x = "55%";
                   rotateY = -15;
                   blur = "3px";
                 } else if (position === -1) {
                   // Inner Left
                   zIndex = 10;
-                  scale = 0.85;
+                  scale = 0.8;
                   opacity = 0.4;
-                  x = "-45%";
+                  x = "-55%";
                   rotateY = 15;
                   blur = "3px";
                 } else if (position === 2) {
                   // Outer Right
                   zIndex = 5;
-                  scale = 0.7;
+                  scale = 0.65;
                   opacity = 0.15;
-                  x = "80%";
+                  x = "100%";
                   rotateY = -25;
                   blur = "6px";
                 } else if (position === -2) {
                   // Outer Left
                   zIndex = 5;
-                  scale = 0.7;
+                  scale = 0.65;
                   opacity = 0.15;
-                  x = "-80%";
+                  x = "-100%";
                   rotateY = 25;
                   blur = "6px";
                 }

@@ -149,3 +149,23 @@
   background-color: var(--accent-orange);
   animation: scroll-hint 2s infinite;
 }
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+  
+  .primaryBtn,
+  .secondaryBtn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .scrollIndicator {
+    display: none;
+  }
+}
