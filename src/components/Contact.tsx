@@ -109,7 +109,7 @@ export default function Contact() {
                 </div>
 
                 <div className={styles.formGroup}>
-                  <label>EMAIL ADDRESS</label>
+                  <label>EMAIL ADDRESS (OPTIONAL)</label>
                   <input 
                     type="email" 
                     name="email"
@@ -133,7 +133,7 @@ export default function Contact() {
                 </div>
                 
                 <div className={styles.formGroup}>
-                  <label>MESSAGE</label>
+                  <label>MESSAGE (OPTIONAL)</label>
                   <textarea 
                     name="message"
                     value={formData.message}
@@ -187,10 +187,6 @@ export default function Contact() {
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
                 <span>LINKEDIN</span>
-              </a>
-              <a href="https://behance.net" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="7.3" cy="8.1" r="3.1"></circle><path d="M7 13.5v3.1c0 .4-.4.8-.8.8H2.8c-.4 0-.8-.4-.8-.8v-3.1"></path><path d="M2 13.5h10.6"></path><path d="M13.5 12h7"></path><path d="M17 12V4"></path></svg>
-                <span>BEHANCE</span>
               </a>
             </motion.div>
 

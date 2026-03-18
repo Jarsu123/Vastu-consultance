@@ -62,7 +62,13 @@
   margin: 0 auto;
   perspective: 2000px;
   overflow: visible;
-  padding: 8rem 0;
+  padding: 4rem 0;
+}
+
+@media (min-width: 768px) {
+  .carouselContainer {
+    padding: 8rem 0;
+  }
 }
 
 .carouselWrapper {
@@ -214,9 +220,10 @@
 
 @media (max-width: 768px) {
   .card {
-    width: 280px;
+    width: 290px;
     height: 420px;
-    left: 45%; /* Slightly adjusted for mobile centering */
+    left: 45%; 
+    margin-left: -145px !important; /* Force override margin-left from inline style if needed */
   }
   .carouselWrapper {
     height: 440px;

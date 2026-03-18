@@ -15,8 +15,8 @@ export default function Hero() {
           </div>
 
           <h1 className={styles.title}>
-            Healing<br />
-            <span className={styles.italic}>Consultancy</span>
+            Healing Consultancy<br />
+            <span className={styles.italic}>Vastu & Astrology</span>
           </h1>
 
           <p className={styles.description}>

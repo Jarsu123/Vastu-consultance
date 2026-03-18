@@ -49,7 +49,11 @@ export default function Testimonials() {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    const checkMobile = () => {
+      const mobile = window.innerWidth < 768;
+      setIsMobile(mobile);
+      if (mobile) setIsAligned(true);
+    };
     checkMobile();
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
@@ -79,8 +83,8 @@ export default function Testimonials() {
           <div className={isAligned ? styles.grid : styles.scrambleContainer}>
             {testimonials.map((t, i) => {
               const mobileScramble = {
-                x: t.scramble.x * 0.4,
-                y: t.scramble.y * 0.4,
+                x: t.scramble.x * 0.25,
+                y: t.scramble.y * 0.25,
                 rotate: t.scramble.rotate * 0.5,
                 scale: t.scramble.scale
               };

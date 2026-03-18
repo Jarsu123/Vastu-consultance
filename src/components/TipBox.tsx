@@ -4,28 +4,46 @@ import { useState, useEffect, useRef } from "react";
 import styles from "./TipBox.module.css";
 
 const TIPS = [
-  "Keep the North-East corner clean for good energy.",
-  "Put a small water fountain in the North for better jobs and money.",
-  "Don't put a mirror in front of your bed for better sleep.",
-  "Try to have your kitchen in the South-East corner.",
-  "Keep the center of your house empty and clean."
+  "A clean and open center invites positive energy and harmony into your home.",
+  "Place a small water fountain in the North to attract wealth and career growth.",
+  "Avoid placing mirrors directly in front of your bed for a restful sleep.",
+  "Position your kitchen in the South-East corner to balance the fire element.",
+  "Keep your main entrance bright and well-lit to welcome divine blessings."
 ];
 
 export default function TipBox() {
   const [currentTip, setCurrentTip] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [progress, setProgress] = useState(0);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
+  const ROTATION_TIME = 4000; // 4 seconds
+  const STEP_TIME = 40; // update progress every 40ms for smoothness
+
   useEffect(() => {
-    if (!isPaused) {
-      timerRef.current = setInterval(() => {
-        setCurrentTip((prev) => (prev + 1) % TIPS.length);
-      }, 2500);
+    if (isPaused) {
+      if (timerRef.current) clearInterval(timerRef.current);
+      return;
     }
+
+    const startTime = Date.now() - (progress / 100) * ROTATION_TIME;
+    
+    timerRef.current = setInterval(() => {
+      const elapsed = Date.now() - startTime;
+      const newProgress = (elapsed / ROTATION_TIME) * 100;
+
+      if (newProgress >= 100) {
+        setCurrentTip((prev) => (prev + 1) % TIPS.length);
+        setProgress(0);
+      } else {
+        setProgress(newProgress);
+      }
+    }, STEP_TIME);
+
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
     };
-  }, [isPaused]);
+  }, [isPaused, currentTip]);
 
   return (
     <div 
@@ -35,8 +53,8 @@ export default function TipBox() {
     >
       <div className={styles.tipCard}>
         <div className={styles.cardHeader}>
-          <span className={styles.sparkle}>✦</span>
-          <span>PRO TIP</span>
+          <span className={styles.sparkle}>💡</span>
+          <span>VASTU PRO TIP</span>
         </div>
         
         <div className={styles.contentArea}>
@@ -45,7 +63,9 @@ export default function TipBox() {
               key={index} 
               className={`${styles.tipText} ${index === currentTip ? styles.active : ""}`}
             >
-              {tip}
+              {tip.split('.').map((part, i) => (
+                part.trim() && <p key={i}>{part.trim()}.</p>
+              ))}
             </div>
           ))}
         </div>
@@ -56,7 +76,10 @@ export default function TipBox() {
               <div 
                 key={index} 
                 className={`${styles.dot} ${index === currentTip ? styles.dotActive : ""}`}
-                onClick={() => setCurrentTip(index)}
+                onClick={() => {
+                  setCurrentTip(index);
+                  setProgress(0);
+                }}
               />
             ))}
           </div>
@@ -64,12 +87,20 @@ export default function TipBox() {
             <div 
               className={styles.progressFill} 
               style={{ 
-                width: `${((currentTip + 1) / TIPS.length) * 100}%`,
-                transition: isPaused ? "none" : "width 0.5s ease" 
+                width: `${progress}%`,
+                transition: isPaused ? "none" : "width 40ms linear" 
               }} 
             />
           </div>
         </div>
+
+        <button 
+          className={styles.backToTop}
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        >
+          <span className={styles.arrow}>↑</span>
+          Back to Top
+        </button>
       </div>
       <div className={styles.shadow} />
     </div>

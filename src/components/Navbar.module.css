@@ -3,18 +3,24 @@
   top: 0;
   width: 100%;
   z-index: 50;
-  padding: 1.5rem 5rem;
+  padding: 1rem 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(253, 251, 247, 0.8);
+  background-color: rgba(253, 251, 247, 0.9);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
+@media (min-width: 1024px) {
+  .nav {
+    padding: 1.5rem 5rem;
+  }
+}
+
 .logo {
   font-family: var(--font-serif);
-  font-size: 1.875rem;
+  font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: -0.05em;
   color: var(--foreground);
@@ -22,11 +28,23 @@
   z-index: 51;
 }
 
+@media (min-width: 768px) {
+  .logo {
+    font-size: 1.875rem;
+  }
+}
+
 .rightSection {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1rem;
   z-index: 51;
+}
+
+@media (min-width: 768px) {
+  .rightSection {
+    gap: 1.5rem;
+  }
 }
 
 .menuToggle {
@@ -54,8 +72,15 @@
 .cta {
   border-bottom: 1px solid var(--foreground);
   padding-bottom: 0.25rem;
-  font-size: 0.875rem;
+  font-size: 0.8rem;
   font-weight: 500;
+  white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+  .cta {
+    font-size: 0.875rem;
+  }
 }
 
 .cta:hover {
@@ -65,10 +90,6 @@
 
 /* Mobile responsive */
 @media (max-width: 900px) {
-  .nav {
-    padding: 1rem 1.5rem;
-  }
-
   .menuToggle {
     display: flex;
   }

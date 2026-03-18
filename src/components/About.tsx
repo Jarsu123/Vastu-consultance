@@ -10,20 +10,26 @@ export default function About() {
       <div className="container">
         <div className={styles.grid}>
           <div className={styles.imageSide}>
-            <div className={styles.imageWrapper}>
-              <Image 
-                src="/images/about-expert.jpg" 
-                alt="Vastu Expert" 
-                fill
-                style={{ objectFit: 'cover' }}
-                className={styles.image}
-              />
-              <div className={styles.experienceBadge}>
-                <span className={styles.years}>15+</span>
-                <span className={styles.expText}>Years of Experience</span>
+            <div className={styles.imageContainer}>
+              <div className={styles.imageWrapper}>
+                <Image 
+                  src="/images/about-expert.jpg" 
+                  alt="Shalu Singh - Professional Vastu Consultant & Energy Expert" 
+                  fill
+                  style={{ objectFit: 'cover' }}
+                  className={styles.image}
+                />
+                <div className={styles.experienceBadge}>
+                  <span className={styles.years}>15+</span>
+                  <span className={styles.expText}>Years of Experience</span>
+                </div>
               </div>
+              <div className={styles.imageBg}></div>
             </div>
-            <div className={styles.imageBg}></div>
+            <div className={styles.expertInfo}>
+              <h3 className={styles.expertName}>Shalu Singh</h3>
+              <p className={styles.expertTitle}>Vastu Consultant & Energy Expert</p>
+            </div>
           </div>
 
           <div className={styles.contentSide}>
@@ -32,13 +38,13 @@ export default function About() {
               <span className={styles.badgeText}>Our Experience</span>
             </div>
             <h2 className={styles.title}>
-              Ancient Vastu Skills for Modern Homes
+              Transform Your Home with Proven Vastu Expertise
             </h2>
             <p className={styles.description}>
-              We believe that your home affects your life. For 15 years, we have helped people make their homes better using Vastu.
+              Your home influences your energy, success, and peace of mind. With over 15 years of experience, we help homeowners create balanced and harmonious living spaces using authentic Vastu principles.
             </p>
             <p className={styles.description}>
-              Our way is simple—we help you fix the energy of your space to support your goals and bring peace.
+              Our approach is simple—we identify energy imbalances and provide practical solutions that bring clarity, positivity, and growth into your life
             </p>
             
             <div className={styles.stats}>
