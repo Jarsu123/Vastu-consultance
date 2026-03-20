@@ -43,6 +43,7 @@ export default function TipBox() {
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isPaused, currentTip]);
 
   return (
@@ -86,23 +87,11 @@ export default function TipBox() {
           <div className={styles.progressBar}>
             <div 
               className={styles.progressFill} 
-              style={{ 
-                width: `${progress}%`,
-                transition: isPaused ? "none" : "width 40ms linear" 
-              }} 
+              style={{ width: `${progress}%` }} 
             />
           </div>
         </div>
-
-        <button 
-          className={styles.backToTop}
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        >
-          <span className={styles.arrow}>↑</span>
-          Back to Top
-        </button>
       </div>
-      <div className={styles.shadow} />
     </div>
   );
 }

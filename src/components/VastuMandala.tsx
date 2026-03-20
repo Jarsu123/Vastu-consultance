@@ -15,7 +15,7 @@ export default function VastuMandala() {
   const ring2Ref = useRef<SVGSVGElement>(null);
   const ring3Ref = useRef<SVGSVGElement>(null);
 
-  const [hoveredDir, setHoveredDir] = useState<number | null>(null);
+// UNUSED: const [hoveredDir, setHoveredDir] = useState<number | null>(null);
 
   const lastTimeRef = useRef<number | null>(null);
   const rotRef = useRef({ r1: 0, r2: 0, r3: 0 });
@@ -89,7 +89,7 @@ export default function VastuMandala() {
     canvas.height = 1200;
 
     type Particle = { x: number; y: number; vx: number; vy: number; life: number; r: number; color: string };
-    let particles: Particle[] = [];
+    const particles: Particle[] = [];
 
     const colors = ["rgba(211, 84, 0, 0.4)", "rgba(234, 179, 8, 0.3)", "rgba(255, 255, 255, 0.2)"];
 
@@ -142,8 +142,6 @@ export default function VastuMandala() {
                 fontSize="12" 
                 fontWeight="900"
                 className={styles.dirText}
-                onMouseEnter={() => setHoveredDir(i)}
-                onMouseLeave={() => setHoveredDir(null)}
               >
                 {dir}
               </text>

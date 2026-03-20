@@ -1,19 +1,28 @@
+import { useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { SriYantra } from "./CelestialDecor";
+import TipBox from "./TipBox";
 import styles from "./QuoteBanner.module.css";
 
 export default function QuoteBanner() {
+  const particles = useMemo(() => [...Array(20)].map(() => ({
+    left: `${Math.random() * 100}%`,
+    top: `${Math.random() * 100}%`,
+    delay: `${Math.random() * 5}s`,
+    opacity: Math.random() * 0.5 + 0.2
+  })), []);
+
   return (
     <section className={styles.banner}>
       {/* Celestial Particles */}
       <div className={styles.celestialBg}>
-        {[...Array(20)].map((_, i) => (
+        {particles.map((p: {left: string, top: string, delay: string, opacity: number}, i: number) => (
           <div key={i} className={styles.particle} style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-            animationDelay: `${Math.random() * 5}s`,
-            opacity: Math.random() * 0.5 + 0.2
+            left: p.left,
+            top: p.top,
+            animationDelay: p.delay,
+            opacity: p.opacity
           }}></div>
         ))}
       </div>
@@ -40,17 +49,6 @@ export default function QuoteBanner() {
                 Guided by Shalu Singh, with 15+ years of Vastu expertise
               </div>
             </div>
-
-            <div className={styles.ctaGroup}>
-              <div className={styles.ctaSubtext}>BOOK YOUR MEETING TODAY</div>
-              <Link href="#contact" className={styles.consultBtn}>
-                Book a Consultation
-              </Link>
-              <div className={styles.socialProof}>
-                <span className={styles.dot}></span>
-                Trusted by 500+ families
-              </div>
-            </div>
           </div>
           
           <div className={styles.imageSide}>
@@ -69,6 +67,21 @@ export default function QuoteBanner() {
                 <p className={styles.expertTitleInline}>Vastu Consultant & Energy Expert</p>
               </div>
             </div>
+          </div>
+
+          <div className={styles.ctaGroup}>
+            <div className={styles.ctaSubtext}>BOOK YOUR MEETING TODAY</div>
+            <Link href="#contact" className={styles.consultBtn}>
+              Book a Consultation
+            </Link>
+            <div className={styles.socialProof}>
+              <span className={styles.dot}></span>
+              Trusted by 500+ families
+            </div>
+          </div>
+
+          <div className={styles.tipSide}>
+            <TipBox />
           </div>
         </div>
       </div>

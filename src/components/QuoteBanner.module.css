@@ -31,10 +31,29 @@
 @media (min-width: 1024px) {
   .glassContent {
     grid-template-columns: 1.5fr 1fr;
-    padding: 5rem 6rem;
+    grid-template-rows: auto auto;
+    padding: 3rem 4rem;
+    gap: 1rem 4rem; /* Tight vertical gap for compactness */
+    align-items: center;
   }
 }
 
+.tipSide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .tipSide {
+    grid-column: 2;
+    grid-row: 2;
+    margin-top: 0;
+  }
+}
 .mandalaWrapper {
   position: absolute;
   top: 50%;
@@ -85,9 +104,20 @@
 
 @media (min-width: 1024px) {
   .textSide {
+    grid-column: 1;
+    grid-row: 1;
     align-items: flex-start;
     text-align: left;
   }
+}
+
+.tipSide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  width: 100%;
 }
 
 .logoWrapper {
@@ -183,8 +213,11 @@
 
 @media (min-width: 1024px) {
   .ctaGroup {
+    grid-column: 1;
+    grid-row: 2;
     align-items: flex-start;
     gap: 1rem;
+    margin-top: 0;
   }
 }
 
@@ -223,11 +256,11 @@
 }
 
 .dot {
-  width: 6px;
-  height: 6px;
-  background-color: #22c55e;
+  width: 6.5px;
+  height: 6.5px;
+  background-color: var(--accent-orange);
   border-radius: 50%;
-  box-shadow: 0 0 10px rgba(34, 197, 94, 0.5);
+  box-shadow: 0 0 12px rgba(194, 65, 12, 0.6);
   animation: pulse 2s infinite;
 }
 
@@ -239,9 +272,19 @@
 
 .imageSide {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   position: relative;
   z-index: 2;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .imageSide {
+    grid-column: 2;
+    grid-row: 1;
+  }
 }
 
 .portraitContainer {
@@ -249,18 +292,19 @@
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
+  width: 100%;
 }
 
 .portraitWrapper {
   position: relative;
-  width: 260px;
-  height: 260px;
+  width: 360px;
+  height: 360px;
   border-radius: 50%;
   overflow: hidden;
   border: 4px solid white;
   box-shadow: 0 0 0 12px rgba(255, 255, 255, 0.6),
-              0 30px 60px -12px rgba(211, 84, 0, 0.25),
-              0 0 40px rgba(211, 84, 0, 0.1);
+              0 30px 60px -12px rgba(194, 65, 12, 0.25),
+              0 0 40px rgba(194, 65, 12, 0.1);
   transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 

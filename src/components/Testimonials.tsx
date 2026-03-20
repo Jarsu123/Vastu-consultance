@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { MoonPhases } from "./CelestialDecor";
 import styles from "./Testimonials.module.css";
 
@@ -110,7 +110,7 @@ export default function Testimonials() {
                     </svg>
                   ))}
                 </div>
-                <p className={styles.content}>"{t.content}"</p>
+                 <p className={styles.content}>&quot;{t.content}&quot;</p>
                 <div className={styles.author}>
                   <div className={styles.authorCircle}>
                     {t.name.split(" ").map(n => n[0]).join("")}

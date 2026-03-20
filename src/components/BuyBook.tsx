@@ -10,7 +10,7 @@ export default function BuyBook() {
           <div className={styles.imageWrapper}>
             <Image 
               src="/images/numbers-magic-cover.png" 
-              alt="Number's Magic: A Guide to Numerology by Shalu Singh" 
+              alt="Number&apos;s Magic: A Guide to Numerology by Shalu Singh" 
               width={400} 
               height={600} 
               className={styles.bookImage}
@@ -25,14 +25,14 @@ export default function BuyBook() {
             </div>
             
             <h2 className={styles.title}>
-              Number's <span className={styles.accent}>Magic</span>
+              Number&apos;s <span className={styles.accent}>Magic</span>
             </h2>
             <p className={styles.author}>By Numerologist Shalu Singh</p>
 
             <div className={styles.summaryBox}>
               <h3 className={styles.summaryTitle}>About the Book</h3>
               <p className={styles.description}>
-                "Number's Magic" explains how numbers help you. It shows how dates and names 
+                &quot;Number&apos;s Magic&quot; explains how numbers help you. It shows how dates and names 
                 affect your success, money, and peace at home.
               </p>
               <p className={styles.description} style={{ marginTop: '1rem' }}>

@@ -1,7 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import QuoteBanner from "@/components/QuoteBanner";
-import TipBox from "@/components/TipBox";
 import Services from "@/components/Services";
 import About from "@/components/About";
 import Testimonials from "@/components/Testimonials";
@@ -17,7 +16,6 @@ export default function Home() {
       <Navbar />
       <Hero />
       <QuoteBanner />
-      <TipBox />
       <Services />
       <About />
       <Testimonials />

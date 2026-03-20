@@ -23,8 +23,7 @@ export default function AboutPage() {
     offset: ["start start", "end end"]
   });
 
-  const y1 = useTransform(scrollYProgress, [0, 1], [0, 200]);
-  const y2 = useTransform(scrollYProgress, [0, 1], [0, -200]);
+  // Removed unused y1, y2
 
   return (
     <div className={styles.pageWrapper} ref={containerRef}>
@@ -205,7 +204,7 @@ export default function AboutPage() {
           <div className="container">
             <div className={styles.galleryHeader}>
               <h2 className={styles.sectionTitle}>Moments & Memories</h2>
-              <p className={styles.subtitle}>A glimpse into seminars, consultations, and the sacred spaces we've transformed.</p>
+              <p className={styles.subtitle}>A glimpse into seminars, consultations, and the sacred spaces we&apos;ve transformed.</p>
             </div>
 
             <div className={styles.galleryGrid}>
@@ -232,8 +231,8 @@ export default function AboutPage() {
                       alt={img.title} 
                       fill 
                       style={{ objectFit: 'cover' }} 
-                      onError={(e: any) => {
-                        // Fallback logic if user hasn't uploaded exact image names yet
+                      onError={(e) => {
+                        // Fallback logic if image doesn't exist
                         e.currentTarget.src = "/images/gallery-1.png"; 
                       }}
                     />

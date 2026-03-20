@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { AstrologySymbol } from "./CelestialDecor";
+// UNUSED: import { AstrologySymbol } from "./CelestialDecor";
 import VastuMandala from "./VastuMandala";
 import styles from "./Contact.module.css";
 
