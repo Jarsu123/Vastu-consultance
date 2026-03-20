@@ -50,6 +50,7 @@ export const metadata: Metadata = {
 };
 
 import SacredClickEffect from "@/components/SacredClickEffect";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 export default function RootLayout({
   children,
@@ -61,6 +62,7 @@ export default function RootLayout({
       <body className={`${playfair.variable} ${inter.variable}`}>
         <SacredClickEffect />
         {children}
+        <WhatsAppButton />
       </body>
     </html>
   );

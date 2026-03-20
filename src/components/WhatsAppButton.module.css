@@ -2,24 +2,28 @@
   position: fixed;
   bottom: 1.5rem;
   right: 1.5rem;
+  left: auto;
   width: 3.5rem;
   height: 3.5rem;
   background-color: #25D366;
   color: white;
   border-radius: 50%;
-  display: flex;
+  display: flex !important;
   align-items: center;
   justify-content: center;
   box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
-  z-index: 1000;
+  z-index: 9998;
   border: none;
   cursor: pointer;
   transition: transform 0.3s ease;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 @media (min-width: 768px) {
   .whatsapp {
     bottom: 2rem;
+    right: auto;
     left: 2rem;
     width: 4rem;
     height: 4rem;

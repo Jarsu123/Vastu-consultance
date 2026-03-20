@@ -6,7 +6,6 @@ import About from "@/components/About";
 import Testimonials from "@/components/Testimonials";
 import BuyBook from "@/components/BuyBook";
 import Contact from "@/components/Contact";
-import WhatsAppButton from "@/components/WhatsAppButton";
 import GridLines from "@/components/GridLines";
 
 export default function Home() {
@@ -21,7 +20,6 @@ export default function Home() {
       <Testimonials />
       <BuyBook />
       <Contact />
-      <WhatsAppButton />
       
       <footer style={{ padding: '4rem 0', textAlign: 'center', backgroundColor: 'var(--background)' }}>
         <p className="brand-font" style={{ fontSize: '1.5rem', marginBottom: '0.5rem', fontWeight: 600 }}>Healing<span className="text-accent">.</span></p>

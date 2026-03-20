@@ -376,9 +376,10 @@
   }
 
   .portraitWrapper {
-    width: 150px;
-    height: 150px;
-    border-width: 8px;
+    width: 140px;
+    height: 140px;
+    border-width: 4px;
+    box-shadow: 0 10px 30px rgba(194, 65, 12, 0.2);
   }
   
   .consultBtn {
@@ -386,6 +387,15 @@
   }
   
   .omSymbol {
-    font-size: 3rem;
+    font-size: 2.5rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .hindiText {
+    font-size: 0.85rem;
+  }
+
+  .ctaGroup {
+    gap: 1rem;
   }
 }

@@ -1,11 +1,14 @@
-import { useMemo } from "react";
+"use client";
+import { useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { SriYantra } from "./CelestialDecor";
 import TipBox from "./TipBox";
+import BookingModal from "./BookingModal";
 import styles from "./QuoteBanner.module.css";
 
 export default function QuoteBanner() {
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
   const particles = useMemo(() => [...Array(20)].map(() => ({
     left: `${Math.random() * 100}%`,
     top: `${Math.random() * 100}%`,
@@ -71,9 +74,12 @@ export default function QuoteBanner() {
 
           <div className={styles.ctaGroup}>
             <div className={styles.ctaSubtext}>BOOK YOUR MEETING TODAY</div>
-            <Link href="#contact" className={styles.consultBtn}>
+            <button 
+              onClick={() => setIsBookingOpen(true)} 
+              className={styles.consultBtn}
+            >
               Book a Consultation
-            </Link>
+            </button>
             <div className={styles.socialProof}>
               <span className={styles.dot}></span>
               Trusted by 500+ families
@@ -89,6 +95,11 @@ export default function QuoteBanner() {
       {/* Decorative Orbs */}
       <div className={styles.orb1}></div>
       <div className={styles.orb2}></div>
+
+      <BookingModal 
+        isOpen={isBookingOpen} 
+        onClose={() => setIsBookingOpen(false)} 
+      />
     </section>
   );
 }

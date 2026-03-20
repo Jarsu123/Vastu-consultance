@@ -4,59 +4,79 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { MoonPhases } from "./CelestialDecor";
 import styles from "./Testimonials.module.css";
+import Image from "next/image";
 
 const testimonials = [
   {
     name: "Jigna P.",
-    content: "She was too good thank you mam. Apne achha marghdarshan diya hai, positive banaya mujhe. Ek nayi hope aayi hai mere mein. Thank you!",
+    content: "She was absolutely wonderful! Thank you, Ma'am. You gave me such great guidance and made me feel so positive. A new hope has truly awakened in me. Thank you!",
     stars: 5,
+    avatar: "/images/testimonials/jigna.png",
     scramble: { x: -120, y: -40, rotate: -12, scale: 0.95 },
   },
   {
     name: "Dheeraj S.",
-    content: "Nice explanation. Clear and precise guidance that helped me a lot.",
+    content: "Excellent explanation. Clear, precise, and practical guidance that helped me immensely.",
     stars: 5,
+    avatar: "/images/testimonials/dheeraj.png",
     scramble: { x: 140, y: -80, rotate: 10, scale: 1.02 },
   },
   {
-    name: "Kalaivani S.",
-    content: "Accurate predictions. The level of detail and foresight was truly impressive.",
+    name: "Sakshi A.",
+    content: "Thank you so much for your guidance, Ma'am! ❤️ I am diligently following the remedies you suggested.",
     stars: 5,
+    avatar: "/images/testimonials/sakshi.png",
     scramble: { x: -160, y: 120, rotate: -15, scale: 0.98 },
   },
   {
-    name: "Akshay W.",
-    content: "Good 👍. Very professional and insightful consultation.",
+    name: "Kalaivani S.",
+    content: "Incredibly accurate predictions. The depth of insight and detail provided was truly impressive.",
     stars: 5,
+    avatar: "/images/testimonials/kalaivani.png",
     scramble: { x: 180, y: 60, rotate: 8, scale: 1.05 },
   },
   {
-    name: "Madhuri K.",
-    content: "Ji ma'am karti hu main aur kuch remedy. Deeply appreciate the follow-up and care.",
+    name: "Jot S.",
+    content: "Insightful and instant responses. Very professional consultation. Highly recommended!",
     stars: 5,
+    avatar: "/images/testimonials/jot.png",
     scramble: { x: 20, y: -160, rotate: -8, scale: 1.03 },
   },
   {
-    name: "Elena Richardson",
-    content: "The insights provided by Healing Consultancy transformed my perspective on space. Our latest project has a flow that feels intentional and divine.",
+    name: "Raj G.",
+    content: "Wonderful experience. Thank you for providing such clear answers to all my questions.",
     stars: 5,
+    avatar: "/images/testimonials/raj.png",
     scramble: { x: -40, y: 180, rotate: 15, scale: 0.97 },
+  },
+  {
+    name: "Usha M.",
+    content: "Deeply grateful for the wonderful consultation. The focus on results and spiritual alignment is rare.",
+    stars: 5,
+    avatar: "/images/testimonials/usha.png",
+    scramble: { x: -200, y: -120, rotate: -10, scale: 0.96 },
+  },
+  {
+    name: "N S.",
+    content: "Thank you for the excellent 'Marghdarshan'. It has brought much-needed clarity to my path.",
+    stars: 4,
+    avatar: "/images/testimonials/n-s.png",
+    scramble: { x: 220, y: -140, rotate: 12, scale: 1.01 },
   },
 ];
 
 export default function Testimonials() {
-  const [isAligned, setIsAligned] = useState(false);
+  const [isAligned, setIsAligned] = useState(true); // Default to true to prevent phantom elements during hydration
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const checkMobile = () => {
+    const checkSize = () => {
       const mobile = window.innerWidth < 768;
       setIsMobile(mobile);
-      if (mobile) setIsAligned(true);
     };
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
+    checkSize();
+    window.addEventListener('resize', checkSize);
+    return () => window.removeEventListener('resize', checkSize);
   }, []);
 
   return (
@@ -113,7 +133,13 @@ export default function Testimonials() {
                  <p className={styles.content}>&quot;{t.content}&quot;</p>
                 <div className={styles.author}>
                   <div className={styles.authorCircle}>
-                    {t.name.split(" ").map(n => n[0]).join("")}
+                    <Image 
+                      src={t.avatar} 
+                      alt={t.name}
+                      width={45}
+                      height={45}
+                      className={styles.avatarImg}
+                    />
                   </div>
                   <div className={styles.authorInfo}>
                     <h4 className={styles.name}>{t.name}</h4>

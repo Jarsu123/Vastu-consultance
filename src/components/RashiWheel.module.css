@@ -207,4 +207,8 @@
     transform: translate(50%, -50%); /* Centered on small mobile */
     opacity: 0.15; /* Lower opacity since it's behind text now */
   }
+
+  .outerRing {
+    pointer-events: none !important;
+  }
 }

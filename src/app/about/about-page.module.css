@@ -10,12 +10,24 @@
   position: relative;
 }
 
+@media (max-width: 768px) {
+  .hero {
+    padding: 10rem 0 4rem;
+  }
+}
+
 .heroTitle {
   font-family: var(--font-playfair);
-  font-size: 5rem;
-  line-height: 1;
-  margin-bottom: 2.5rem;
+  font-size: 3.5rem;
+  line-height: 1.1;
+  margin-bottom: 2rem;
   color: var(--foreground);
+}
+
+@media (min-width: 768px) {
+  .heroTitle {
+    font-size: 5rem;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -200,8 +212,15 @@
 /* Certifications */
 .certGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+@media (max-width: 480px) {
+  .certGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
 }
 
 .certCard {
@@ -418,7 +437,7 @@
   position: fixed;
   top: 2rem;
   left: 2rem;
-  z-index: 100;
+  z-index: 150;
   background: white;
   width: 3.5rem;
   height: 3.5rem;
@@ -429,6 +448,15 @@
   box-shadow: 0 10px 20px rgba(0,0,0,0.05);
   color: var(--foreground);
   transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .backBtn {
+    top: 4.5rem; /* Better alignment on small screens */
+    left: 1rem;
+    width: 2.8rem;
+    height: 2.8rem;
+  }
 }
 
 .backBtn:hover {

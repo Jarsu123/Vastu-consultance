@@ -23,7 +23,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className={styles.nav}>
+      <nav className={`${styles.nav} ${isOpen ? styles.openNav : ""}`}>
         <Link href="/" className={`${styles.logo} brand-font`} onClick={() => setIsOpen(false)}>
           Healing<span className="text-accent">.</span>
         </Link>
