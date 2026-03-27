@@ -255,7 +255,7 @@ export default function AboutPage() {
                     src="/images/graduation-award.png" 
                     alt="Graduation Ceremony" 
                     fill 
-                    style={{ objectFit: 'cover' }}
+                    style={{ objectFit: 'contain', backgroundColor: '#fdfdfd' }}
                     className={styles.roundedImage}
                   />
                   <div className={styles.awardBadge}>Convocation 2024</div>
