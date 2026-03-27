@@ -13,7 +13,7 @@ export default function About() {
             <div className={styles.imageContainer}>
               <div className={styles.imageWrapper}>
                 <Image 
-                  src="/images/expert-real.png" 
+                  src="/images/expert-saree.png" 
                   alt="Shalu Singh - Professional Vastu Consultant & Energy Expert" 
                   fill
                   style={{ objectFit: 'cover', objectPosition: 'center top' }}
