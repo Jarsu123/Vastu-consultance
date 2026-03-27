@@ -199,6 +199,72 @@ export default function AboutPage() {
           </div>
         </section>
 
+        {/* Media Features & Awards */}
+        <section className={styles.section}>
+          <div className="container">
+            <div className={styles.mediaGrid}>
+              <motion.div 
+                className={styles.mediaContent}
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+              >
+                <div className={styles.badge}>
+                  <div className={styles.line}></div>
+                  <span className={styles.badgeText}>Recognition</span>
+                </div>
+                <h2 className={styles.sectionTitleLeft}>Media Features & Prestigious Awards</h2>
+                <p className={styles.mediaDescription}>
+                  Our commitment to authentic Vedic wisdom has been recognized by national media and esteemed institutions. From being featured in leading Hindi publications to receiving accolades for excellence in Numerology and Vastu, these milestones validate our journey of transforming lives.
+                </p>
+                
+                <div className={styles.awardHighlight}>
+                  <div className={styles.awardIcon}>🏆</div>
+                  <div>
+                    <h4>Best Numerologist Award 2024</h4>
+                    <p>Presented by Dr. Rohit Gadkari for exceptional performance and dedication in Advanced Numerology studies.</p>
+                  </div>
+                </div>
+              </motion.div>
+
+              <div className={styles.mediaImages}>
+                <motion.div 
+                  className={styles.pressImageWrapper}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8 }}
+                >
+                  <Image 
+                    src="/images/press-feature.png" 
+                    alt="News Feature" 
+                    fill 
+                    style={{ objectFit: 'contain' }}
+                    className={styles.roundedImage}
+                  />
+                </motion.div>
+                <motion.div 
+                  className={styles.awardImageWrapper}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                >
+                  <Image 
+                    src="/images/graduation-award.png" 
+                    alt="Graduation Ceremony" 
+                    fill 
+                    style={{ objectFit: 'cover' }}
+                    className={styles.roundedImage}
+                  />
+                  <div className={styles.awardBadge}>Convocation 2024</div>
+                </motion.div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Beautiful Gallery Section */}
         <section className={styles.section}>
           <div className="container">
