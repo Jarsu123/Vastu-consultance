@@ -82,10 +82,10 @@ export default function AboutPage() {
               >
                 <div className={styles.journeyImageWrapper}>
                   <Image 
-                    src="/images/expert-real.png" 
+                    src="/images/about-expert.png" 
                     alt="Spiritual Journey" 
                     fill
-                    style={{ objectFit: 'cover', objectPosition: 'center top' }}
+                    style={{ objectFit: 'cover' }}
                   />
                   <div className={styles.glassBadge}>
                     <span>15+ Years</span>
