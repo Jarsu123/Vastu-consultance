@@ -82,7 +82,7 @@ export default function AboutPage() {
               >
                 <div className={styles.journeyImageWrapper}>
                   <Image 
-                    src="/images/expert-graduation.png" 
+                    src="/images/expert-graduation-final.png" 
                     alt="Spiritual Journey" 
                     fill
                     style={{ objectFit: 'cover', objectPosition: 'center top' }}
