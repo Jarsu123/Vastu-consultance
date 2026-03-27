@@ -58,10 +58,10 @@ export default function QuoteBanner() {
             <div className={styles.portraitContainer}>
               <div className={styles.portraitWrapper}>
                 <Image 
-                  src="/images/about-expert.jpg" 
+                  src="/images/expert-real.png" 
                   alt="Vastu Expert - Shalu Singh" 
                   fill
-                  style={{ objectFit: 'cover' }}
+                  style={{ objectFit: 'cover', objectPosition: 'center top' }}
                   className={styles.portrait}
                 />
               </div>

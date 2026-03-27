@@ -13,10 +13,10 @@ export default function About() {
             <div className={styles.imageContainer}>
               <div className={styles.imageWrapper}>
                 <Image 
-                  src="/images/about-expert.jpg" 
+                  src="/images/expert-real.png" 
                   alt="Shalu Singh - Professional Vastu Consultant & Energy Expert" 
                   fill
-                  style={{ objectFit: 'cover' }}
+                  style={{ objectFit: 'cover', objectPosition: 'center top' }}
                   className={styles.image}
                 />
                 <div className={styles.experienceBadge}>
