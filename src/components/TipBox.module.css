@@ -1,0 +1,135 @@
+.floatWrapper {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  z-index: 20;
+}
+
+.tipCard {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(194, 65, 12, 0.15);
+  border-radius: 1.5rem;
+  padding: 1rem 2rem; /* Reduced padding from 1.5rem */
+  color: #4a3728;
+  position: relative;
+  transition: all 0.4s ease;
+  box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.tipCard:hover {
+  transform: translateY(-5px); /* Less dramatic hover */
+  border-color: rgba(194, 65, 12, 0.4);
+  box-shadow: 0 15px 35px -10px rgba(194, 65, 12, 0.1);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.65rem; /* Slightly smaller font */
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  color: var(--accent-orange);
+  margin-bottom: 0.5rem; /* Reduced margin */
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(194, 65, 12, 0.05);
+  padding-bottom: 0.5rem;
+}
+
+.sparkle {
+  animation: rotateSparkle 4s linear infinite;
+  font-size: 0.9rem;
+}
+
+@keyframes rotateSparkle {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.contentArea {
+  min-height: 55px; /* Significantly reduced from 110px */
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.tipText {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  font-size: 1rem; /* Slightly larger text for wide layout */
+  line-height: 1.4;
+  font-weight: 500;
+  opacity: 0;
+  transform: translateY(-40%);
+  transition: all 0.5s ease;
+  color: #4a3728;
+  pointer-events: none;
+  font-family: var(--font-playfair);
+  text-align: center; /* Center-aligned for full-width look */
+}
+
+.tipText.active {
+  opacity: 1;
+  transform: translateY(-50%);
+  position: absolute;
+  pointer-events: auto;
+}
+
+.footer {
+  margin-top: 0.5rem; /* Reduced margin */
+  display: flex;
+  flex-direction: row; /* Horizontal layout for footer when wide */
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.indicators {
+  display: flex;
+  gap: 0.4rem;
+  justify-content: center;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(194, 65, 12, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dotActive {
+  background: var(--accent-orange);
+  width: 16px;
+  border-radius: 3px;
+}
+
+.progressBar {
+  width: 100%;
+  height: 3px;
+  background: rgba(194, 65, 12, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(to right, #e67e22, var(--accent-orange));
+  width: 0%;
+  transition: width 40ms linear;
+}
+
+@media (max-width: 1024px) {
+  .floatWrapper {
+    max-width: 100%;
+  }
+}
